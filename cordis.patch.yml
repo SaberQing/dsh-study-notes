@@ -1,0 +1,4 @@
+- insert:
+    - id: dsh-study-notes
+      name: '@local/dsh-study-notes'
+      config: {}
