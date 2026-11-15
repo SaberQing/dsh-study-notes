@@ -2,23 +2,31 @@
 
 ## 环境要求
 
-- DSH desktop **`0.2.2-rc.1`**（其他版本未验证）
-- 无需 `npm install`；插件无第三方依赖
+- DSH desktop **`0.2.2-rc.3`**（其他版本未验证；npm 包用 `engines.dsh` 拦截不兼容版本，本地目录安装不做拦截）
+- 无需额外 Node 依赖；插件没有第三方依赖
 
-## 安装方式一：插件管理器（推荐）
+## 安装方式一：npm 包（推荐）
 
-在 DSH 中打开插件管理器（或直接对 DSH 说“用 plugin_manager 安装这个插件”），指向本目录的**绝对路径**：
+npm 包名是 `dsh-study-notes`。在 DSH 的插件管理器里按包名安装，或直接对 DSH 说“用 plugin_manager 安装 dsh-study-notes”（若 npm 上还搜不到，请用方式二）：
+
+```text
+plugin_manager install_bundle  dsh-study-notes
+```
+
+## 安装方式二：本地目录（开发 / 离线）
+
+1. 把本仓库放到一个固定目录（不要放在临时目录）；
+2. 用插件管理器安装该目录：
 
 ```text
 plugin_manager install_bundle  <本目录绝对路径>
 ```
 
-安装后**完全退出 DSH 再启动**（Host 代码只在启动时加载）。
+本地目录安装是 **link**，目录被移动或删除后插件会失效。本仓库的开发包名是 `@local/dsh-study-notes`，本地安装时以这个包名出现在 profile 里；发布到 npm 的包名是 `dsh-study-notes`（由 `npm run build:npm` 生成到 `dist-npm/`）。
 
-## 安装方式二：手动挂载
+## 安装方式三：手动挂载 profile（不推荐）
 
-1. 把本仓库放到一个固定目录（不要放在临时目录）；
-2. 编辑 DSH profile 的 `package.json`（Windows 默认 `%USERPROFILE%\.dsh\profiles\desktop\package.json`）：
+1. 编辑 DSH profile 的 `package.json`（Windows 默认 `%USERPROFILE%\.dsh\profiles\desktop\package.json`）：
 
 ```json
 {
@@ -33,7 +41,11 @@ plugin_manager install_bundle  <本目录绝对路径>
 }
 ```
 
-3. **完全退出 DSH 再启动**。
+2. **完全退出 DSH 再启动**。
+
+## 安装后
+
+**完全退出 DSH 再启动**（Host 代码只在启动时加载）。之后刷新页面即可看到客户端入口；只刷新页面而不重启，Host 路由不会生效。
 
 ## 验证安装
 
@@ -45,8 +57,8 @@ plugin_manager install_bundle  <本目录绝对路径>
 
 ## 卸载
 
-1. 从 profile 的 `bundles` 与 `dependencies` 中移除 `@local/dsh-study-notes`；
-2. 删除本目录；
+1. 用插件管理器移除 `dsh-study-notes`（npm 安装）或 `@local/dsh-study-notes`（本地目录安装）；也可以从 profile 的 `bundles` 与 `dependencies` 中移除对应条目；
+2. 若用本地目录安装，可再删除该目录；
 3. 完全重启 DSH。
 
 可选清理本地数据：
@@ -57,7 +69,10 @@ plugin_manager install_bundle  <本目录绝对路径>
 ## 常见问题
 
 **右栏没有“学习笔记”标签？**
-先点标签条「+」打开开始页，再进入；若设置页也没有分区，说明插件未加载，检查 profile 的 bundles 并完全重启。
+先点标签条「+」打开开始页，再进入；若设置页也没有分区，说明插件未加载，检查 profile 的 `bundles` 并完全重启。
+
+**npm 安装失败，提示版本不满足？**
+插件要求 DSH `>=0.2.2-rc.3 <0.3.0`；请升级 DSH，或改用本地目录方式并接受未验证的风险。
 
 **保存 Key 后只显示前 7 位与后 4 位，怎么看完整 Key？**
 这是设计如此：完整 Key 不返回浏览器，不能查看/修改；如需更换请删除后重新输入。

@@ -6,6 +6,9 @@ node_modules/
 *.log
 *.tmp
 
+# generated npm package (npm run build:npm)
+dist-npm/
+
 # internal development docs (not published)
 docs/feasibility/
 docs/reference/

@@ -2,7 +2,7 @@
 
 ## 兼容性
 
-- 仅在 **DSH desktop `0.2.2-rc.1`** 上验证；插件依赖 DSH 的扩展位与部分内部接口，DSH 升级后可能需要适配；
+- 仅在 **DSH desktop `0.2.2-rc.3`** 上验证；插件依赖 DSH 的扩展位与部分内部接口，DSH 升级后可能需要适配；
 - 无第三方依赖，不使用构建步骤；
 - Windows 上 API Key 使用 DPAPI 保护；macOS/Linux 回退 AES-256-GCM（密钥文件 0600）。
 

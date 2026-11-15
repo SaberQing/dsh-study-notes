@@ -6,7 +6,7 @@ English | [中文](README.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> **Status: 0.1.0-beta** — works and self-tested on DSH desktop `0.2.2-rc.1`; built on DSH extension points, so a DSH upgrade may require updates.
+> **Status: 0.1.0-beta** — works and self-tested on DSH desktop `0.2.2-rc.3`; built on DSH extension points, so a DSH upgrade may require updates.
 
 ## Why
 
@@ -31,20 +31,33 @@ dsh-study-notes separates these questions: select text → right-click "问这�
 
 ## Requirements
 
-- DSH desktop **`0.2.2-rc.1`** (other versions untested)
+- DSH desktop **`0.2.2-rc.3`** (other versions untested)
 - No extra Node dependencies; strongest API-key protection on Windows (DPAPI)
 
 ## Install
 
-This plugin is installed as a local bundle. Put this repository in a stable directory, then choose one of:
+**Option A — npm package (recommended)**
 
-**Option A — plugin manager (recommended)**
+npm package name: `dsh-study-notes`. Install it from the DSH plugin manager by package name, or ask DSH to run the command below; if npm does not have it yet, use the local-directory option (Option B):
+
+```text
+plugin_manager install_bundle  dsh-study-notes
+```
+
+Then **fully quit and restart DSH** (Host code loads only at startup).
+
+**Option B — local directory (development / offline)**
+
+1. Put this repository in a stable directory.
+2. Install that directory:
 
 ```text
 plugin_manager install_bundle  <absolute path to this directory>
 ```
 
-**Option B — manual profile wiring**
+> The development package name in this repository is `@local/dsh-study-notes`; `npm run build:npm` produces a `dist-npm/` directory published as `dsh-study-notes`.
+
+**Option C — manual profile wiring (not recommended)**
 
 1. Add the plugin to your DSH profile `package.json` dependencies (adjust the path):
 

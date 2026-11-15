@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> **状态：0.1.0-beta** — 功能可用、已在 DSH desktop `0.2.2-rc.1` 上自测；接口依赖 DSH 扩展位，升级 DSH 后可能需要适配。
+> **状态：0.1.0-beta** — 功能可用、已在 DSH desktop `0.2.2-rc.3` 上自测；接口依赖 DSH 扩展位，升级 DSH 后可能需要适配。
 
 ## 为什么
 
@@ -31,20 +31,33 @@
 
 ## 环境要求
 
-- DSH desktop **`0.2.2-rc.1`**（其他版本未验证）
+- DSH desktop **`0.2.2-rc.3`**（其他版本未验证）
 - 无需额外 Node 依赖；使用 Windows 时获得最强的 API Key 保护（DPAPI）
 
 ## 安装
 
-本插件以本地 bundle 形式安装。先把本仓库放到一个固定目录，然后二选一：
+**方式 A：npm 包（推荐）**
 
-**方式 A：插件管理器（推荐）**
+npm 包名：`dsh-study-notes`。在 DSH 插件管理器里按包名安装，或直接对 DSH 说“用 plugin_manager 安装 dsh-study-notes”（若 npm 上还搜不到，请用方式 B 的本地目录安装）：
+
+```text
+plugin_manager install_bundle  dsh-study-notes
+```
+
+安装后**完全退出 DSH 再启动**（Host 代码只在启动时加载）。
+
+**方式 B：本地目录（开发 / 离线）**
+
+1. 把本仓库放到一个固定目录；
+2. 用插件管理器安装该目录：
 
 ```text
 plugin_manager install_bundle  <插件目录绝对路径>
 ```
 
-**方式 B：手动挂载**
+> 本仓库的开发包名是 `@local/dsh-study-notes`；发布到 npm 时由 `npm run build:npm` 生成名为 `dsh-study-notes` 的 `dist-npm/` 目录。
+
+**方式 C：手动挂载 profile（不推荐）**
 
 1. 在 DSH profile 的 `package.json` 中把插件加入依赖（路径按实际位置修改）：
 

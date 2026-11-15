@@ -23,6 +23,9 @@
     "education"
   ],
   "type": "module",
+  "scripts": {
+    "build:npm": "node scripts/build-npm.mjs"
+  },
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",

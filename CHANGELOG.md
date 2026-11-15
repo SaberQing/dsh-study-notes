@@ -4,7 +4,7 @@ All notable changes to this project are documented here. This project follows se
 
 ## [0.1.0-beta.1] - 2026-11-15
 
-First public beta.
+First public beta. Published to npm as `dsh-study-notes`; local-directory installation is still supported.
 
 ### Added
 
