@@ -1,5 +1,7 @@
 # dsh-study-notes（学习笔记）
 
+中文 | [English](README.en.md)
+
 > 在 DSH 对话里划词提问，问题进入独立的右侧栏分支，不占用主对话上下文；之后随时点回高亮或索引即可回到当时的问题。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
