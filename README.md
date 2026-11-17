@@ -5,8 +5,9 @@
 > 在 DSH 对话里划词提问，问题进入独立的右侧栏分支，不占用主对话上下文；之后随时点回高亮或索引即可回到当时的问题。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/dsh-study-notes.svg?label=npm&color=blue)](https://www.npmjs.com/package/dsh-study-notes)
 
-> **状态：0.1.0-beta** — 功能可用、已在 DSH desktop `0.2.2-rc.3` 上自测；接口依赖 DSH 扩展位，升级 DSH 后可能需要适配。
+> **状态：0.1.0-beta** — 已发布到 npm（[`dsh-study-notes`](https://www.npmjs.com/package/dsh-study-notes)），已在 DSH desktop `0.2.2-rc.3` 上自测；接口依赖 DSH 扩展位，升级 DSH 后可能需要适配。
 
 ## 为什么
 
@@ -38,13 +39,13 @@
 
 **方式 A：npm 包（推荐）**
 
-npm 包名：`dsh-study-notes`。在 DSH 插件管理器里按包名安装，或直接对 DSH 说“用 plugin_manager 安装 dsh-study-notes”（若 npm 上还搜不到，请用方式 B 的本地目录安装）：
+插件已发布到 npm：**`dsh-study-notes`**（作者维护，当前 `latest` 指向 `0.1.0-beta.1`）。在 DSH 插件管理器里按包名安装，或直接对 DSH 说“用 plugin_manager 安装 dsh-study-notes”：
 
 ```text
 plugin_manager install_bundle  dsh-study-notes
 ```
 
-安装后**完全退出 DSH 再启动**（Host 代码只在启动时加载）。
+需要固定版本时写成 `dsh-study-notes@0.1.0-beta.1`。安装后**完全退出 DSH 再启动**（Host 代码只在启动时加载）。
 
 **方式 B：本地目录（开发 / 离线）**
 
@@ -55,7 +56,7 @@ plugin_manager install_bundle  dsh-study-notes
 plugin_manager install_bundle  <插件目录绝对路径>
 ```
 
-> 本仓库的开发包名是 `@local/dsh-study-notes`；发布到 npm 时由 `npm run build:npm` 生成名为 `dsh-study-notes` 的 `dist-npm/` 目录。
+> 本地目录方式适合开发或离线调试：本仓库的开发包名是 `@local/dsh-study-notes`；npm 包由 `npm run build:npm` 生成到 `dist-npm/`。
 
 **方式 C：手动挂载 profile（不推荐）**
 

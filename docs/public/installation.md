@@ -7,11 +7,13 @@
 
 ## 安装方式一：npm 包（推荐）
 
-npm 包名是 `dsh-study-notes`。在 DSH 的插件管理器里按包名安装，或直接对 DSH 说“用 plugin_manager 安装 dsh-study-notes”（若 npm 上还搜不到，请用方式二）：
+插件已发布到 npm：**`dsh-study-notes`**（当前 `latest` 指向 `0.1.0-beta.1`）。在 DSH 的插件管理器里按包名安装，或直接对 DSH 说“用 plugin_manager 安装 dsh-study-notes”：
 
 ```text
 plugin_manager install_bundle  dsh-study-notes
 ```
+
+需要固定版本时写成 `dsh-study-notes@0.1.0-beta.1`（`npm view dsh-study-notes dist-tags` 可查看当前标签）。
 
 ## 安装方式二：本地目录（开发 / 离线）
 
